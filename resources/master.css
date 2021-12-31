@@ -12,6 +12,9 @@ html, body, div{
   border:none;
   background:rgba(0,0,0,0);
 }
+p{
+  margin:0;
+}
 :not(.vertical).topCenterAlign, :not(.vertical).topLeftAlign, :not(.vertical).topRightAlign{
   align-content:flex-start;
   align-items:flex-start;
