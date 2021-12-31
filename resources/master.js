@@ -36,14 +36,14 @@ window.addEventListener("resize", function () {
     if (B_resizedRecently === false) {
         document.documentElement.resizeRelatively()
         B_resizedRecently = true
-        setTimeout(() => B_resizedRecently = false, 100)
+        setTimeout(() => B_resizedRecently = false, 200)
     }
     else setTimeout(() => {
         if (B_resizedRecently === false) {
             document.documentElement.resizeRelatively()
             B_resizedRecently = true
-            setTimeout(() => B_resizedRecently = false, 100)
+            setTimeout(() => B_resizedRecently = false, 200)
         }
-    }, 100)
+    }, 200)
 })
 document.addEventListener("DOMContentLoaded", () => document.documentElement.resizeRelatively())
