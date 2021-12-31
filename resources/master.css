@@ -1,0 +1,68 @@
+html, body, div{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-content:center;
+  align-items:center;
+  position:relative;
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  border:none;
+  background:rgba(0,0,0,0);
+}
+:not(.vertical).topCenterAlign, :not(.vertical).topLeftAlign, :not(.vertical).topRightAlign{
+  align-content:flex-start;
+  align-items:flex-start;
+}
+:not(.vertical).bottomCenterAlign, :not(.vertical).bottomLeftAlign, :not(.vertical).bottomRightAlign{
+  align-content:flex-end;
+  align-items:flex-end;
+}
+:not(.vertical).leftCenterAlign, :not(.vertical).topLeftAlign, :not(.vertical).bottomLeftAlign{
+  justify-content:flex-start;
+}
+:not(.vertical).rightCenterAlign, :not(.vertical).topRightAlign, :not(.vertical).bottomRightAlign{
+  justify-content:flex-end;
+}
+.vertical{
+  flex-direction:column;
+}
+.vertical.topCenterAlign, .vertical.topLeftAlign, .vertical.topRightAlign{
+  justify-content:flex-start;
+}
+.vertical.bottomCenterAlign, .vertical.bottomLeftAlign, .vertical.bottomRightAlign{
+  justify-content:flex-end;
+}
+.vertical.leftCenterAlign, .vertical.topLeftAlign, .vertical.bottomLeftAlign{
+  align-content:flex-start;
+  align-items:flex-start;
+}
+.vertical.rightCenterAlign, .vertical.topRightAlign, .vertical.bottomRightAlign{
+  align-content:flex-end;
+  align-items:flex-end;
+}
+.full{
+ display:flex;
+ width:100%;
+ height:100%;
+}
+.noDrag {
+  -ms-user-select:none; 
+  -moz-user-select:-moz-none; 
+  -webkit-user-select:none; 
+  -khtml-user-select:none; 
+  user-select:none;
+}
+.button {
+  cursor:pointer;
+  -ms-user-select:none; 
+  -moz-user-select:-moz-none; 
+  -webkit-user-select:none; 
+  -khtml-user-select:none; 
+  user-select:none;
+}
+#FlyEedo{
+  display:none
+}
