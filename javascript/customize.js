@@ -1,21 +1,19 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     const A_settings = ["domain", "password", "vaildUntil", "visitLimit", "email"]
+    const disabledRecently = { domain: false, password: false, vaildUntil: false, visitLimit: false, email: false }
     for (let i = 0; i < A_settings.length; i++) {
         document.getElementById(A_settings[i] + "Text").onclick = function () {
-            document.getElementById(A_settings[i] + "Checkbox").checked = !document.getElementById(A_settings[i] + "Checkbox").checked
-            for (let i = 0; i < A_settings.length; i++)
-                (document.getElementById(A_settings[i] + "Checkbox").checked) ? enable(A_settings[i]) : disable(A_settings[i])
+            if (disabledRecently[A_settings[i]]) return
+            (document.getElementById(A_settings[i] + "Checkbox").checked) ? disable(A_settings[i]) : enable(A_settings[i])
         }
         document.getElementById(A_settings[i] + "Checkbox").onclick = function () {
-            for (let i = 0; i < A_settings.length; i++)
-                (document.getElementById(A_settings[i] + "Checkbox").checked) ? enable(A_settings[i]) : disable(A_settings[i])
+            (document.getElementById(A_settings[i] + "Checkbox").checked) ? enable(A_settings[i]) : disable(A_settings[i])
         }
 
         if (A_settings[i] !== "domain")
             document.getElementById(A_settings[i] + "Input").onblur = function () {
-                if (document.getElementById(A_settings[i] + "Input").value === "")
-                    disable(A_settings[i])
+                if (document.getElementById(A_settings[i] + "Input").value === "") disable(A_settings[i])
             }
     }
 
@@ -44,5 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (S_setting === "domain")
             document.getElementById(S_setting + "Select").disabled = true
+
+        disabledRecently[S_setting] = true
+        setTimeout(function () { disabledRecently[S_setting] = false }, 500)
     }
 })

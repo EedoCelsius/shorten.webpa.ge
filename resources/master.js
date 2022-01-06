@@ -10,9 +10,12 @@ function resizeElement(elmnt) {
     for (let i = 0; i < 2; i++) {
         const N_viewportWidth = document.documentElement.offsetWidth, N_viewportHeight = document.documentElement.offsetHeight,
             N_selfWidth = elmnt.offsetWidth, N_selfHeight = elmnt.offsetHeight,
-            N_selfShort = (N_selfWidth < N_selfHeight) ? N_selfWidth : N_selfHeight, N_selfLong = (N_selfWidth < N_selfHeight) ? N_selfHeight : N_selfWidth,
-            N_parentWidth = elmnt.parentElement?.offsetWidth, N_parentHeight = elmnt.parentElement?.offsetHeight,
-            N_parentShort = (N_parentWidth < N_parentHeight) ? N_parentWidth : N_parentHeight, N_parentLong = (N_parentWidth < N_parentHeight) ? N_parentHeight : N_parentWidth
+            N_selfShort = (N_selfWidth < N_selfHeight) ? N_selfWidth : N_selfHeight, N_selfLong = (N_selfWidth < N_selfHeight) ? N_selfHeight : N_selfWidth
+
+        let N_parentWidth, N_parentHeight, N_parentShort, N_parentLong
+        if (elmnt.parentElement)
+            N_parentWidth = elmnt.parentElement.offsetWidth, N_parentHeight = elmnt.parentElement.offsetHeight,
+                N_parentShort = (N_parentWidth < N_parentHeight) ? N_parentWidth : N_parentHeight, N_parentLong = (N_parentWidth < N_parentHeight) ? N_parentHeight : N_parentWidth
 
         S_relativeStyles = (elmnt.getAttribute("relsize") || "")
             .replaceAll("vw(", "calc(" + (N_viewportWidth - 0.01) / 100 + "px * ").replaceAll("vh(", "calc(" + (N_viewportHeight - 0.01) / 100 + "px * ")
@@ -36,14 +39,15 @@ window.addEventListener("resize", function () {
     if (B_resizedRecently === false) {
         document.documentElement.resizeRelatively()
         B_resizedRecently = true
-        setTimeout(() => B_resizedRecently = false, 200)
+        setTimeout(function () { B_resizedRecently = false, 200 })
     }
-    else setTimeout(() => {
+    else setTimeout(function () {
         if (B_resizedRecently === false) {
             document.documentElement.resizeRelatively()
             B_resizedRecently = true
-            setTimeout(() => B_resizedRecently = false, 200)
+            setTimeout(function () { B_resizedRecently = false, 200 })
         }
     }, 200)
 })
-document.addEventListener("DOMContentLoaded", () => document.documentElement.resizeRelatively())
+
+document.addEventListener("DOMContentLoaded", function () { document.documentElement.resizeRelatively() })
