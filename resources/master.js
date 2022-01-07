@@ -31,7 +31,9 @@ function resizeElement(elmnt) {
 HTMLElement.prototype.resizeRelatively = function () {
     resizeElement(this)
     for (let i = 0; i < this.childElementCount; i++)
-        this.children[i].resizeRelatively()
+        try {
+            this.children[i].resizeRelatively()
+        } catch { }
 }
 
 let B_resizedRecently = false
