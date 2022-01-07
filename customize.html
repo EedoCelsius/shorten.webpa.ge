@@ -37,8 +37,10 @@
         <div class="rightCenterAlign" relsize="height: pw(3); width: 85%;">
 
         </div>
-        <div class="leftCenterAlign noDrag" relsize="height: pw(5); width: 85%; font-size: sh(37.5);">
-            <p><b relsize="font-size: 1.5em">Original URL</b> - Uneditable</p>
+        <div class="leftCenterAlign noDrag" relsize="height: pw(5); width: 85%; font-size: sh(55);">
+            <b>
+                Original URL <span relsize="font-size: 0.675em; font-weight: normal">(Uneditable)</span>
+            </b>
             <img src="./resources/backArrow.png" onclick="window.history.go(-1)" class="button" relsize="height: 100%;"
                 style="position:absolute; right: 1%; bottom: 60%;">
         </div>
@@ -48,9 +50,11 @@
             placeholder="Disabled" disabled>
 
 
-        <div class="leftCenterAlign noDrag" relsize="height: pw(5); width: 85%; font-size: sh(37.5);">
+        <div class="leftCenterAlign noDrag" relsize="height: pw(5); width: 85%; font-size: sh(55);">
             <input type="checkbox" id="domainCheckbox" relsize="height: ph(100); margin: 0 ph(17.5) 0 0">
-            <p id="domainText" class="button"><b relsize="font-size: 1.5em">Domain</b> - 'webpa.ge' if disabled</p>
+            <b id="domainText" class="button">
+                Domain <span relsize="font-size: 0.675em; font-weight: normal">('webpa.ge' if disabled)</span>
+            </b>
         </div>
         <input id="domainInput" type="text"
             relsize="height: pw(2.75); width: 53%; padding: pw(2); border-width: pw(0.8); border-radius: 15px; font-size: pw(2.5);"
@@ -65,9 +69,11 @@
         </select>
 
 
-        <div class="leftCenterAlign noDrag" relsize="height: pw(5); width: 85%; font-size: sh(37.5);">
+        <div class="leftCenterAlign noDrag" relsize="height: pw(5); width: 85%; font-size: sh(55);">
             <input type="checkbox" id="passwordCheckbox" relsize="height: ph(100); margin: 0 ph(17.5) 0 0">
-            <p id="passwordText" class="button"><b relsize="font-size: 1.5em">Password</b> - Case sensitive</p>
+            <b id="passwordText" class="button">
+                Password <span relsize="font-size: 0.675em; font-weight: normal">(Case sensitive)</span>
+            </b>
         </div>
         <input id="passwordInput" type="text"
             relsize="height: pw(2.75); width: 85%; padding: pw(2); border-width: pw(0.8); border-radius: 15px; font-size: pw(2.5);"
@@ -75,9 +81,11 @@
             placeholder="Disabled" disabled>
 
 
-        <div class="leftCenterAlign noDrag" relsize="height: pw(5); width: 85%; font-size: sh(37.5);">
+        <div class="leftCenterAlign noDrag" relsize="height: pw(5); width: 85%; font-size: sh(55);">
             <input type="checkbox" id="vaildUntilCheckbox" relsize="height: ph(100); margin: 0 ph(17.5) 0 0">
-            <p id="vaildUntilText" class="button"><b relsize="font-size: 1.5em">Valid until</b> - Your local time</p>
+            <b id="vaildUntilText" class="button">
+                Expiry date <span relsize="font-size: 0.675em; font-weight: normal">(Your local time zone)</span>
+            </b>
         </div>
         <input id="vaildUntilInput" type="datetime-local"
             relsize="height: pw(2.75); width: 85%; padding: pw(2); border-width: pw(0.8); border-radius: 15px; font-size: pw(2.5);"
@@ -85,19 +93,23 @@
             placeholder="Disabled" disabled>
 
 
-        <div class="leftCenterAlign noDrag" relsize="height: pw(5); width: 85%; font-size: sh(37.5);">
+        <div class="leftCenterAlign noDrag" relsize="height: pw(5); width: 85%; font-size: sh(55);">
             <input type="checkbox" id="visitLimitCheckbox" relsize="height: ph(100); margin: 0 ph(17.5) 0 0">
-            <p id="visitLimitText" class="button"><b relsize="font-size: 1.5em">Visit limit</b> - 1 ~ 4,294,967,295</p>
+            <b id="visitLimitText" class="button">
+                Visit limit <span relsize="font-size: 0.675em; font-weight: normal">(0 ~ 4,294,967,295)</span>
+            </b>
         </div>
         <input id="visitLimitInput" type="number"
             relsize="height: pw(2.75); width: 85%; padding: pw(2); border-width: pw(0.8); border-radius: 15px; font-size: pw(2.5);"
             style="border-color: black; background-color: rgba(256, 256, 256, 0.8); text-align: center;"
-            placeholder="Disabled" min="1" max="4294967295" disabled>
+            placeholder="Disabled" min="0" max="4294967295" disabled>
 
 
-        <div class="leftCenterAlign noDrag" relsize="height: pw(5); width: 85%; font-size: sh(37.5);">
+        <div class="leftCenterAlign noDrag" relsize="height: pw(5); width: 85%; font-size: sh(55);">
             <input type="checkbox" id="emailCheckbox" relsize="height: ph(100); margin: 0 ph(17.5) 0 0">
-            <p id="emailText" class="button"><b relsize="font-size: 1.5em">Email</b> - Needed for edit/analysis</p>
+            <b id="emailText" class="button">
+                Email <span relsize="font-size: 0.675em; font-weight: normal">(Needed for edit/analysis)</span>
+            </b>
         </div>
         <input id="emailInput" type="email"
             relsize="height: pw(2.75); width: 85%; padding: pw(2); border-width: pw(0.8); border-radius: 15px; font-size: pw(2.5);"
@@ -105,11 +117,11 @@
             placeholder="Disabled" disabled>
 
 
-        <div class="leftCenterAlign noDrag" relsize="height: pw(3); width: 85%; font-size: sh(37.5);">
+        <div class="leftCenterAlign noDrag" relsize="height: pw(3); width: 85%; font-size: sh(55);">
         </div>
         <div id="submitButton" type="submit" class="button"
             relsize="height: pw(3.5); width: 86%; padding: pw(2); border-width: pw(0.8); border-radius: 15px; font-size: pw(2.5);"
-            style="border-color: black; background-color: rgba(0, 0, 0, 0.8); text-align: center;">Submit</div>
+            style="border-color: black; background-color: rgba(0, 0, 0, 0.8); text-align: center;"><b>Submit</b></div>
     </div>
 </body>
 
@@ -134,7 +146,7 @@
 
 <script type="application/javascript">
     document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("vaildUntilText").innerHTML = `<b style="font-size: 1.5em">Valid until</b> - ${Intl.DateTimeFormat().resolvedOptions().timeZone} time`
+        document.getElementById("vaildUntilText").children[0].innerHTML = ` (${Intl.DateTimeFormat().resolvedOptions().timeZone} time)`
     })
 </script>
 
